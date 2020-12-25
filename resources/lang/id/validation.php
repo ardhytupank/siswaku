@@ -155,7 +155,10 @@ return [
             'unique'            => 'NOMOR TELEPON sudah terpakai.',
             'numeric'           => 'NOMOR TELEPON harus diisi angka.',
             'digits_between'    => 'NOMOR TELEPON harus antara :min atau :max digit.',
-        ]
+        ],
+        'id_kelas'      => [
+            'required'  => 'Kolom KELAS harus di isi.',
+        ],
     ],
 
     /*

@@ -12,7 +12,8 @@ class Siswa extends Model
         'nisn',
         'nama_siswa',
         'tanggal_lahir',
-        'jenis_kelamin'
+        'jenis_kelamin',
+        'id_kelas'
     ];
 
     protected $dates = ['tanggal_lahir'];

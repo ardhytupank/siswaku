@@ -34,6 +34,7 @@ class SiswaController extends Controller
             'jenis_kelamin' => 'required|in:L,P',
             'nomor_telepon' => 'sometimes|nullable|numeric|
             digits_between:10,15|unique:telepon,nomor_telepon',
+            'id_kelas'      => 'required',
         ]);
 
         if ($validator->fails()) {
