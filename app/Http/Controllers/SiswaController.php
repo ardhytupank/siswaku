@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Siswa;
 use Validator;
 use App\Telepon;
+use App\Kelas;
 
 class SiswaController extends Controller
 {
@@ -18,7 +19,8 @@ class SiswaController extends Controller
 
     public function create()
     {
-        return view('siswa.create');
+        $list_kelas = Kelas::pluck('nama_kelas', 'id');
+        return view('siswa.create', compact('list_kelas'));
     }
 
     public function store(Request $request)
