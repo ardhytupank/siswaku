@@ -62,12 +62,13 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = Siswa::findOrFail($id);
+        $list_kelas = Kelas::pluck('nama_kelas', 'id');
 
         if (!empty($siswa->telepon->nomor_telepon)) {
             $siswa->nomor_telepon = $siswa->telepon->nomor_telepon;
         }
 
-        return view('siswa.edit', compact('siswa'));
+        return view('siswa.edit', compact('siswa', 'list_kelas'));
     }
 
     public function update($id, Request $request)
@@ -82,6 +83,7 @@ class SiswaController extends Controller
             'jenis_kelamin' => 'required|in:L,P',
             'nomor_telepon' => 'sometimes|nullable|numeric|
             digits_between:10,15|unique:telepon,nomor_telepon,' . $request->input('id') . ',id_siswa',
+            'id_kelas'      => 'required',
         ]);
 
         if ($validator->fails()) {
