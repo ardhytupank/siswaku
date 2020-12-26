@@ -53,6 +53,8 @@ class SiswaController extends Controller
             $siswa->telepon()->save($telepon);
         }
 
+        $siswa->hobi()->attach($request->input('hobi'));
+
         return redirect('siswa');
     }
     public function show($id)
