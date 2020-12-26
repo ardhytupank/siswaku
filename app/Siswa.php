@@ -37,4 +37,9 @@ class Siswa extends Model
     {
         return $this->belongsToMany('App\Hobi', 'hobi_siswa', 'id_siswa', 'id_hobi')->withTimestamps();
     }
+
+    public function getHobiSiswaAttribute()
+    {
+        return $this->hobi->pluck('id')->toArray();
+    }
 }

@@ -87,15 +87,15 @@
           </div>       
           
       @if ($errors->any())
-          <div class="form-group {{ $errors->has('hobi') ? 'has-error' : 'has-success' }}">
+          <div class="form-group {{ $errors->has('hobi_siswa') ? 'has-error' : 'has-success' }}">
       @else
           <div class="form-group">
       @endif
-        {!! Form::label('hobi','Hobi:',['class' => 'control-label']) !!}
+        {!! Form::label('hobi_siswa','Hobi:',['class' => 'control-label']) !!}
             @if (count($list_hobi) > 0)
             @foreach ($list_hobi as $key => $value)
                 <div class="checkbox">
-                    <label>{!! Form::checkbox('hobi[]', $key, null) !!} {{ $value }}</label>
+                    <label>{!! Form::checkbox('hobi_siswa[]', $key, null) !!} {{ $value }}</label>
                 </div>
             @endforeach
             @else
