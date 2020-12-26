@@ -7,6 +7,7 @@ use App\Siswa;
 use Validator;
 use App\Telepon;
 use App\Kelas;
+use App\Hobi;
 
 class SiswaController extends Controller
 {
@@ -20,7 +21,8 @@ class SiswaController extends Controller
     public function create()
     {
         $list_kelas = Kelas::pluck('nama_kelas', 'id');
-        return view('siswa.create', compact('list_kelas'));
+        $list_hobi = Hobi::pluck('nama_hobi', 'id');
+        return view('siswa.create', compact('list_kelas', 'list_hobi'));
     }
 
     public function store(Request $request)
